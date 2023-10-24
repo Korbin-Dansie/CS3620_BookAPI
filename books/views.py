@@ -9,3 +9,7 @@ from .models import BookData
 class BookViewSet(viewsets.ModelViewSet):
     queryset = BookData.objects.all()
     serializer_class = BookSerializer
+
+class FantasyViewSet(viewsets.ModelViewSet):
+    queryset = BookData.objects.filter(category = "fantasy")
+    serializer_class = BookSerializer

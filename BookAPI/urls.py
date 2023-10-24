@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from books.views import BookViewSet
+from books.views import BookViewSet, FantasyViewSet
 
 # Set up a router for the REST api
-router = routers.DefaultRouter()
+# router = routers.DefaultRouter()
+router = routers.SimpleRouter()
 router.register("books", BookViewSet) # Set up urls at ~/books/
+router.register("fantasy", FantasyViewSet) # Set up urls at ~/books/
 
 urlpatterns = [
     path('', include(router.urls)),
