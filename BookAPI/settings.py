@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Own startapp that I created
-    "books",
+    "books.apps.BooksConfig",
 ]
 
 MIDDLEWARE = [
