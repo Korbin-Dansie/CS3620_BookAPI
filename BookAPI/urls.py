@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from books.views import BiographyViewSet, CookbookViewSet, FictionViewSet, HistoryViewSet, HumorViewSet, NonfictionViewSet, PoetryViewSet, RatingViewSet, RomanceViewSet, home_view, BookViewSet, FantasyViewSet
+from books.views import AdventureViewSet, BiographyViewSet, CookbookViewSet, FictionViewSet, HistoryViewSet, HumorViewSet, NonfictionViewSet, PoetryViewSet, RatingViewSet, RomanceViewSet, home_view, BookViewSet, FantasyViewSet
 
 # Set up a router for the REST api
 # router = routers.DefaultRouter()
@@ -32,6 +32,7 @@ router.register("biography", BiographyViewSet)
 router.register("history", HistoryViewSet)
 router.register("poetry", PoetryViewSet)
 router.register("cookbook", CookbookViewSet)
+router.register("adventure", AdventureViewSet)
 router.register("rating", RatingViewSet)
 
 urlpatterns = [

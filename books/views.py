@@ -50,6 +50,10 @@ class CookbookViewSet(viewsets.ModelViewSet):
     queryset = BookData.objects.filter(category = "cookbook")
     serializer_class = BookSerializer
 
+class AdventureViewSet(viewsets.ModelViewSet):
+    queryset = BookData.objects.filter(category = "adventure")
+    serializer_class = BookSerializer
+
 class RatingViewSet(viewsets.ModelViewSet):
     queryset = BookData.objects.filter(rating__gte = 4)
     serializer_class = BookSerializer
