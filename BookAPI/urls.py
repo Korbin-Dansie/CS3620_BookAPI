@@ -17,15 +17,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from books.views import BookViewSet, FantasyViewSet
+from books.views import BiographyViewSet, CookbookViewSet, FictionViewSet, HistoryViewSet, HumorViewSet, NonfictionViewSet, PoetryViewSet, RatingViewSet, RomanceViewSet, home_view, BookViewSet, FantasyViewSet
 
 # Set up a router for the REST api
 # router = routers.DefaultRouter()
 router = routers.SimpleRouter()
 router.register("books", BookViewSet) # Set up urls at ~/books/
-router.register("fantasy", FantasyViewSet) # Set up urls at ~/books/
+router.register("fantasy", FantasyViewSet)
+router.register("fiction", FictionViewSet)
+router.register("romance", RomanceViewSet)
+router.register("humor", HumorViewSet)
+router.register("nonfiction", NonfictionViewSet)
+router.register("biography", BiographyViewSet)
+router.register("history", HistoryViewSet)
+router.register("poetry", PoetryViewSet)
+router.register("cookbook", CookbookViewSet)
+router.register("rating", RatingViewSet)
 
 urlpatterns = [
+    path('', home_view, name='home'), # Change the index page
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
